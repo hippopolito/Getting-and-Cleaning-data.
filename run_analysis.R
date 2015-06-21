@@ -1,5 +1,4 @@
-# set directory
-setwd("/Users/Theseus/Documents/Coursera/Getting and Cleaning data/course project/UCI HAR Dataset")
+run_analysis.R
 
 #STEP 1
 
@@ -30,11 +29,10 @@ all <- cbind(all.x,all.y,all.subject)
 names(features)
 # use double backslash match a metacharacter as a regular character
 # we have to precede it with a double backslash
-#meanANDstd = grepl( '(-mean\\(\\)|-std\\(\\))', features$V2 )
-meanANDstd = grep("-(mean|std)\\(\\)", features$V2)
+#meanANDstd <- grepl( '(-mean\\(\\)|-std\\(\\))', features$V2 )
+meanANDstd <- grep("-(mean|std)\\(\\)", features$V2)
 all.x_updated <- all.x[,meanANDstd]
 
-#mean_and_std_features <- grep("-(mean|std)\\(\\)", features[, 2])
 
 #STEP 3
 
